@@ -1,0 +1,108 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#C2E5EE"
+        app:cardCornerRadius="20dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="179dp"
+                android:layout_height="27dp"
+                android:layout_marginTop="4dp"
+                android:paddingStart="0.5dp"
+                android:paddingTop="0.5dp"
+                android:paddingEnd="0.5dp"
+                android:paddingBottom="0.5dp"
+                android:text="Jake the dog"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/question_card"
+                android:layout_width="365dp"
+                android:layout_height="wrap_content"
+                android:onClick="display_comments"
+                android:paddingStart="6dp"
+                android:paddingTop="1dp"
+                android:paddingEnd="6dp"
+                android:paddingBottom="1dp"
+                android:text="Title of the post like what if it is 200 characters would it resize itself based on that? or would I need to manually resize each one"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/username"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageButton
+                android:id="@+id/comment_button"
+                android:layout_width="23dp"
+                android:layout_height="17dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="12dp"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:onClick="comment_layout"
+                app:layout_constraintEnd_toStartOf="@+id/like_button"
+                app:layout_constraintTop_toBottomOf="@+id/question_card"
+                app:srcCompat="@drawable/comment_icon" />
+
+            <TextView
+                android:id="@+id/likecount"
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
+                android:text="0"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <ImageButton
+                android:id="@+id/like_button"
+                android:layout_width="25dp"
+                android:layout_height="23dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="1dp"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:onClick="like_question"
+                android:tag="empty"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/likecount"
+                app:layout_constraintTop_toBottomOf="@+id/question_card"
+                app:layout_constraintVertical_bias="0.062"
+                app:srcCompat="@drawable/like_icon" />
+
+            <TextView
+                android:id="@+id/question_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="232dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="51dp"
+                android:text="        "
+                android:textColor="#C2E5EE"
+                app:layout_constraintEnd_toStartOf="@+id/comment_button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question_card" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
+
